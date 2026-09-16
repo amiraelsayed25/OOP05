@@ -1,125 +1,125 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿//using System;
+//using System.Collections.Generic;
+//using System.Linq;
+//using System.Text;
+//using System.Threading.Tasks;
 
-namespace OOP05
-{
-    public class DeliveryCenter
-    {
-        public class DeliveryCenter
-        {
-            private Shipment[] shipments;
+//namespace OOP05
+//{
+//    public class DeliveryCenter
+//    {
+//        public class DeliveryCenter
+//        {
+//            private Shipment[] shipments;
 
-            public string CenterName { get; set; }
+//            public string CenterName { get; set; }
 
-            // Aggregation
-            public Driver Driver { get; set; }
+//            // Aggregation
+//            public Driver Driver { get; set; }
 
-            public DeliveryCenter(string centerName)
-            {
-                CenterName = centerName;
-                shipments = new Shipment[20];
-            }
+//            public DeliveryCenter(string centerName)
+//            {
+//                CenterName = centerName;
+//                shipments = new Shipment[20];
+//            }
 
-            // Integer Indexer
-            public Shipment this[int index]
-            {
-                get
-                {
-                    if (index >= 0 && index < shipments.Length)
-                        return shipments[index];
+//            // Integer Indexer
+//            public Shipment this[int index]
+//            {
+//                get
+//                {
+//                    if (index >= 0 && index < shipments.Length)
+//                        return shipments[index];
 
-                    return default;
-                }
+//                    return default;
+//                }
 
-                set
-                {
-                    if (index >= 0 && index < shipments.Length)
-                        shipments[index] = value;
-                }
-            }
+//                set
+//                {
+//                    if (index >= 0 && index < shipments.Length)
+//                        shipments[index] = value;
+//                }
+//            }
 
-            // String Indexer
-            public Shipment this[string trackingCode]
-            {
-                get
-                {
-                    for (int i = 0; i < shipments.Length; i++)
-                    {
-                        if (shipments[i] != null &&
-                            shipments[i].TrackingCode == trackingCode)
-                        {
-                            return shipments[i];
-                        }
-                    }
+//            // String Indexer
+//            public Shipment this[string trackingCode]
+//            {
+//                get
+//                {
+//                    for (int i = 0; i < shipments.Length; i++)
+//                    {
+//                        if (shipments[i] != null &&
+//                            shipments[i].TrackingCode == trackingCode)
+//                        {
+//                            return shipments[i];
+//                        }
+//                    }
 
-                    return default;
-                }
-            }
+//                    return default;
+//                }
+//            }
 
-            public bool AddShipment(Shipment shipment)
-            {
-                if (shipment == null)
-                    return false;
+//            public bool AddShipment(Shipment shipment)
+//            {
+//                if (shipment == null)
+//                    return false;
 
-                for (int i = 0; i < shipments.Length; i++)
-                {
-                    if (shipments[i] == null)
-                    {
-                        shipments[i] = shipment;
-                        return true;
-                    }
-                }
+//                for (int i = 0; i < shipments.Length; i++)
+//                {
+//                    if (shipments[i] == null)
+//                    {
+//                        shipments[i] = shipment;
+//                        return true;
+//                    }
+//                }
 
-                return false;
-            }
+//                return false;
+//            }
 
-            public bool RemoveShipment(string trackingCode)
-            {
-                for (int i = 0; i < shipments.Length; i++)
-                {
-                    if (shipments[i] != null &&
-                        shipments[i].TrackingCode == trackingCode)
-                    {
-                        shipments[i] = null;
-                        return true;
-                    }
-                }
+//            public bool RemoveShipment(string trackingCode)
+//            {
+//                for (int i = 0; i < shipments.Length; i++)
+//                {
+//                    if (shipments[i] != null &&
+//                        shipments[i].TrackingCode == trackingCode)
+//                    {
+//                        shipments[i] = null;
+//                        return true;
+//                    }
+//                }
 
-                return false;
-            }
+//                return false;
+//            }
 
-            public void PrintAllShipments()
-            {
-                Console.WriteLine("==========================================");
-                Console.WriteLine(CenterName);
-                Console.WriteLine("==========================================");
+//            public void PrintAllShipments()
+//            {
+//                Console.WriteLine("==========================================");
+//                Console.WriteLine(CenterName);
+//                Console.WriteLine("==========================================");
 
-                for (int i = 0; i < shipments.Length; i++)
-                {
-                    if (shipments[i] != null)
-                    {
-                        shipments[i].PrintShipment();
-                    }
-                }
-            }
-            public void PrintTrackingStatues()
-            {
-                foreach (ITrackable Shipment in shipments)
-                {
-                    Console.WriteLine(shipments.GetTrackingStatues();
-                }
-            }
-            public void PrintInsuranceCost()
-            {
-                foreach (Ilinsurance Shipment in shipments)
-                {
-                    Console.WriteLine(shipments.calclatedInsurance());
-                }
-            }
+//                for (int i = 0; i < shipments.Length; i++)
+//                {
+//                    if (shipments[i] != null)
+//                    {
+//                        shipments[i].PrintShipment();
+//                    }
+//                }
+//            }
+//            public void PrintTrackingStatues()
+//            {
+//                foreach (ITrackable Shipment in shipments)
+//                {
+//                    Console.WriteLine(shipments.GetTrackingStatues();
+//                }
+//            }
+//            public void PrintInsuranceCost()
+//            {
+//                foreach (Ilinsurance Shipment in shipments)
+//                {
+//                    Console.WriteLine(shipments.calclatedInsurance());
+//                }
+//            }
 
-        }
-    }
-}
+//        }
+//    }
+//}
